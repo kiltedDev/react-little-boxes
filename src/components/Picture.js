@@ -1,10 +1,18 @@
 import React from 'react';
+import List from './List';
 
 const Picture = props => {
+  let objects = ["Asteroids", "Comets", "Moon", "Planets", "Stars", "Sun"]
+
   return (
     <div className='box picture'>
-      <h1>Look at This Picture</h1>
-      <img alt='Clever EEs' src='https://s3.amazonaws.com/horizon-production/images/react-clever-ees.png'/>
+      <h1>{props.pictureHeader}</h1>
+      <img alt={props.pictureAlt} src={props.pictureSrc}/>
+      <List
+      listHeader = 'Here Is a List'
+      objects = {objects}
+      />
+
     </div>
   )
 }

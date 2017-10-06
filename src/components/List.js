@@ -1,16 +1,17 @@
 import React from 'react';
 
 const List = props => {
+  let objectList = props.objects.map(object =>{
+    return (
+      <li>{object}</li>
+    );
+  })
+
   return (
     <div className='box list'>
-      <h1>Here Is a List</h1>
+      <h1>{props.listHeader}</h1>
       <ul>
-        <li>Asteroids</li>
-        <li>Comets</li>
-        <li>Moon</li>
-        <li>Planets</li>
-        <li>Stars</li>
-        <li>Sun</li>
+      {objectList}
       </ul>
     </div>
   )

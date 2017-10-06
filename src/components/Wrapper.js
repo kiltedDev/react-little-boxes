@@ -1,17 +1,27 @@
 import React from 'react';
+import Numbers from './Numbers';
+import Picture from './Picture';
+
 
 const Wrapper = props => {
+  let date = (new Date).toString();
+  let random = parseInt(Math.random() * 100);
+
   return (
+
     <div className='box wrapper'>
-      <h1>I Am the Wrapper</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sed
-        ullamcorper nibh, id efficitur eros. Suspendisse ultricies est ut mi
-        volutpat, quis faucibus sem malesuada. Pellentesque pellentesque ex at
-        posuere viverra. Nunc maximus massa nec lectus malesuada sodales. Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Cras eget malesuada
-        tortor.
-      </p>
+      <h1>{props.header}</h1>
+      <p>{props.paragraph}</p>
+      <Numbers
+      numbersHeader="Today's Date and Random Number"
+      date = {date}
+      random = {random}
+      />
+      <Picture
+      pictureHeader = 'Look at This Picture'
+      pictureAlt = 'Clever EEs'
+      pictureSrc = 'https://s3.amazonaws.com/horizon-production/images/react-clever-ees.png'
+      />
     </div>
   )
 }
